@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\.NET-HL\\Lession1\\VvtLession1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1F491B1B-767C-4E5C-B8DA-F1F51E8C1734}|VvtLession1\\VvtLession1.csproj|c:\\.net-hl\\lession1\\vvtlession1\\vvtlession1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F491B1B-767C-4E5C-B8DA-F1F51E8C1734}|VvtLession1\\VvtLession1.csproj|solutionrelative:vvtlession1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\.NET-HL\\Lession1\\VvtLession1\\VvtLession1\\Program.cs",
+              "RelativeDocumentMoniker": "VvtLession1\\Program.cs",
+              "ToolTip": "C:\\.NET-HL\\Lession1\\VvtLession1\\VvtLession1\\Program.cs",
+              "RelativeToolTip": "VvtLession1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-17T14:51:17.927Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
