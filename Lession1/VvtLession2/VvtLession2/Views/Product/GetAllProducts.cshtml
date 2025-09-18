@@ -1,0 +1,29 @@
+﻿@model IEnumerable<VvtLesson2.Models.Product>
+
+@{
+    ViewData["Title"] = "Danh Sách Sản Phẩm";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã SP</th>
+            <th>Tên SP</th>
+            <th>Năm SX</th>
+            <th>Giá</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductId</td>
+                <td>@product.ProductName</td>
+                <td>@product.YearRelease</td>
+                <td>@product.Price.ToString("C")</td> <!-- Hiển thị định dạng tiền tệ -->
+            </tr>
+        }
+    </tbody>
+</table>
