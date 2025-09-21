@@ -1,0 +1,74 @@
+﻿@model NetCoreMVCLab03.Models.Book
+
+@{
+    ViewData["Title"] = "Chỉnh sửa sách";
+}
+
+<h2>Chỉnh sửa sách</h2>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="AuthorId" class="control-label">Tác giả</label>
+                <select asp-for="AuthorId" asp-items="ViewBag.Authors" class="form-control">
+                    <option value="">-- Chọn tác giả --</option>
+                </select>
+                <span asp-validation-for="AuthorId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="GenreId" class="control-label">Thể loại</label>
+                <select asp-for="GenreId" asp-items="ViewBag.Genres" class="form-control">
+                    <option value="">-- Chọn thể loại --</option>
+                </select>
+                <span asp-validation-for="GenreId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Price" class="control-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="TotalPage" class="control-label">Số trang</label>
+                <input asp-for="TotalPage" class="form-control" />
+                <span asp-validation-for="TotalPage" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Image" class="control-label">Đường dẫn ảnh</label>
+                <input asp-for="Image" class="form-control" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+                @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <div class="mt-2">
+                        <img src="@Model.Image" alt="@Model.Title" style="width: 80px; height: 100px; object-fit: cover;" />
+                    </div>
+                }
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Summary" class="control-label">Tóm tắt</label>
+                <textarea asp-for="Summary" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Summary" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Cập nhật</button>
+        <a href="@Url.Action("Index")" class="btn btn-secondary">Hủy</a>
+    </div>
+</form>

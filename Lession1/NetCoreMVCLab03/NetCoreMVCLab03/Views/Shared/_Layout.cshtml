@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BookStore</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NetCoreMVCLab03.styles.css" asp-append-version="true" />
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        .bookstore-header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+        }
+
+        .bookstore-nav {
+            background-color: #2c3e50;
+        }
+
+        .book-card {
+            transition: transform 0.3s;
+            height: 100%;
+        }
+
+            .book-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+        .book-img {
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .featured-books {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        /* Logo styles */
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo-icon {
+            font-size: 2rem;
+            margin-right: 10px;
+            color: #ffd700; /* Gold color for the icon */
+        }
+
+        .logo-text {
+            color: white;
+        }
+
+        .logo:hover {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Simple solution for footer */
+        body {
+            position: relative;
+            min-height: 100vh;
+            padding-bottom: 250px;
+            box-sizing: border-box;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Ensure content doesn't get hidden */
+        .main-content {
+            padding-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo -->
+    <header class="bookstore-header">
+        <div class="container text-center py-4">
+            <div class="d-flex justify-content-center align-items-center">
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="logo me-3">
+                    <i class="fas fa-book-open logo-icon"></i>
+                    <span class="logo-text">BookStore</span>
+                </a>
+            </div>
+            <p class="lead mt-2 mb-0">Discover your next favorite book from our extensive collection</p>
+        </div>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bookstore-nav sticky-top">
+        <div class="container">
+            <!-- Mobile logo (hidden on larger screens) -->
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand d-lg-none">
+                <i class="fas fa-book me-2"></i>BookStore
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Book" asp-action="Index">
+                            <i class="fas fa-book me-1"></i>All Books
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Book" asp-action="Create">
+                            <i class="fas fa-plus-circle me-1"></i>Add New Book
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                            <i class="fas fa-shield-alt me-1"></i>Privacy
+                        </a>
+                    </li>
+                </ul>
+
+                <form class="d-flex">
+                    <div class="input-group">
+                        <input class="form-control" type="search" placeholder="Search books..." aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+        <!-- Featured Books Section -->
+        <section class="featured-books">
+            <div class="container">
+                <h2 class="text-center mb-4">
+                    <i class="fas fa-star me-2 text-warning"></i>Popular Books
+                </h2>
+                <div class="row">
+                    <div class="col-12">
+                        @{
+                            var popularBooks = new NetCoreMVCLab03.Models.Book().GetBookList();
+                        }
+                        @if (popularBooks != null && popularBooks.Any())
+                        {
+                            @await Html.PartialAsync("_PopularBook", popularBooks)
+                        }
+                        else
+                        {
+                            <p class="text-center">No books available.</p>
+                        }
+                    </div>
+                </div>
+
+                <!-- Ajax Load Button -->
+                <div class="text-center mt-4">
+                    <button id="load-book" class="btn btn-primary btn-lg">
+                        <i class="fas fa-sync me-2"></i>Load More Books
+                    </button>
+                </div>
+
+                <!-- Ajax Content Area -->
+                <div id="data-from-ajax" class="row mt-4"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>
+                        <i class="fas fa-bookstore me-2"></i>BookStore
+                    </h5>
+                    <p>Vũ Văn Tuấn - K22CNT4 - 2210900132</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5>
+                        <i class="fas fa-link me-2"></i>Quick Links
+                    </h5>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a asp-area="" asp-controller="Home" asp-action="Index" class="text-light">
+                                <i class="fas fa-home me-1"></i>Home
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Book" asp-action="Index" class="text-light">
+                                <i class="fas fa-book me-1"></i>All Books
+                            </a>
+                        </li>
+                        <li>
+                            <a asp-area="" asp-controller="Book" asp-action="Create" class="text-light">
+                                <i class="fas fa-plus-circle me-1"></i>Add New Book
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5>
+                        <i class="fas fa-phone me-2"></i>Contact Us
+                    </h5>
+                    <address class="text-light">
+                        <i class="fas fa-map-marker-alt me-1"></i>FAHASHA BOOK<br>
+                        <span class="ms-3">ASố nhà 43, cụm 3, tổ 7, ngõ 12, Quang Trung, Hà Nội</span><br>
+                        <i class="fas fa-phone me-1"></i><abbr title="Phone">Phone:</abbr> 0983401587
+                    </address>
+                </div>
+            </div>
+            <hr class="bg-light my-4">
+            <div class="text-center">
+                <i class="fas fa-copyright me-1"></i>2025 - BookStore -
+                <a asp-area="" asp-controller="Home" asp-action="Privacy" class="text-light">
+                    <i class="fas fa-shield-alt me-1"></i>Privacy
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        // Bắt sự kiện click vào nút bấm có id = load-book
+        $('#load-book').click(function () {
+            // Thông qua ajax load nội dung từ partial view vào div có id = data-from-ajax
+            $('#data-from-ajax').load('/Book/PopularBook');
+
+            // Ẩn nút sau khi click
+            $(this).hide();
+        });
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

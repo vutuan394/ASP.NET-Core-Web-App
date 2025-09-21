@@ -1,0 +1,74 @@
+﻿@model IEnumerable<NetCoreMVCLab03.Models.Book>
+@using NetCoreMVCLab03.Models
+
+@{
+    ViewData["Title"] = "Danh sách sách";
+    var bookModel = new Book();
+}
+
+<h1>Danh sách các cuốn sách</h1>
+
+<div class="row mb-3">
+    <div class="col-md-3">
+        <label>Chọn tác giả</label>
+        @Html.DropDownList("AuthorId", (IEnumerable<SelectListItem>)ViewBag.Authors, "Tất cả", new { @class = "form-control", id = "authorFilter" })
+    </div>
+    <div class="col-md-3">
+        <label>Chọn thể loại</label>
+        @Html.DropDownList("GenreId", (IEnumerable<SelectListItem>)ViewBag.Genres, "Tất cả", new { @class = "form-control", id = "genreFilter" })
+    </div>
+    <div class="col-md-3 d-flex align-items-end">
+        <a href="@Url.Action("Create", "Book")" class="btn btn-success">Thêm sách mới</a>
+    </div>
+</div>
+
+<table class="table table-bordered mt-3">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Thể loại</th>
+            <th>Giá</th>
+            <th>Hình ảnh</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Title</td>
+                <td>@bookModel.GetAuthorName(item.AuthorId)</td>
+                <td>@bookModel.GetGenreName(item.GenreId)</td>
+                <td>@item.Price.ToString("N0") VNĐ</td>
+                <td>
+                    @if (!string.IsNullOrEmpty(item.Image))
+                    {
+                        <img src="@item.Image" alt="@item.Title" style="width: 80px; height: 100px; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <span>No image</span>
+                    }
+                </td>
+                <td>
+                    <a href="@Url.Action("Edit", "Book", new { id = item.Id })" class="btn btn-warning btn-sm">Sửa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            // Lọc dữ liệu khi thay đổi dropdown
+            $('#authorFilter, #genreFilter').change(function () {
+                // Logic lọc dữ liệu có thể thêm ở đây
+                console.log('Filter changed');
+            });
+        });
+    </script>
+}
