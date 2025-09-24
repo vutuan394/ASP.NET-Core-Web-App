@@ -1,0 +1,130 @@
+﻿@{
+    ViewData["Title"] = "Đăng Ký";
+    var errorMessage = ViewBag.ErrorMessage as string;
+}
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-success text-white text-center">
+                    <h3><i class="fas fa-user-plus"></i> ĐĂNG KÝ TÀI KHOẢN</h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Register" method="post" enctype="multipart/form-data">
+                        @Html.AntiForgeryToken()
+
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5>Thông tin đăng nhập</h5>
+
+                                <div class="mb-3">
+                                    <label for="MaKH" class="form-label">Tên đăng nhập *</label>
+                                    <input type="text" class="form-control" id="MaKH" name="MaKH" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="MatKhau" class="form-label">Mật khẩu *</label>
+                                    <input type="password" class="form-control" id="MatKhau" name="MatKhau" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="ReMatKhau" class="form-label">Nhập lại mật khẩu *</label>
+                                    <input type="password" class="form-control" id="ReMatKhau" name="ReMatKhau" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <h5>Thông tin cá nhân</h5>
+
+                                <div class="mb-3">
+                                    <label for="HoTen" class="form-label">Họ và tên *</label>
+                                    <input type="text" class="form-control" id="HoTen" name="HoTen" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="Email" class="form-label">Email *</label>
+                                    <input type="email" class="form-control" id="Email" name="Email" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="NgaySinh" class="form-label">Ngày sinh *</label>
+                                    <input type="date" class="form-control" id="NgaySinh" name="NgaySinh" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="DienThoai" class="form-label">Số điện thoại *</label>
+                                    <input type="tel" class="form-control" id="DienThoai" name="DienThoai" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h5 class="mt-4">Địa chỉ</h5>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="SoNha" class="form-label">Số nhà</label>
+                                    <input type="text" class="form-control" id="SoNha" name="SoNha">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="mb-3">
+                                    <label for="Duong" class="form-label">Đường</label>
+                                    <input type="text" class="form-control" id="Duong" name="Duong">
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <label for="Phuong" class="form-label">Phường</label>
+                                    <select class="form-select" id="Phuong" name="Phuong">
+                                        <option value="Phú Thạnh">Phú Thạnh</option>
+                                        <option value="Sơn Kỳ" selected>Sơn Kỳ</option>
+                                        <!-- Thêm các phường khác -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <label for="Quan" class="form-label">Quận</label>
+                                    <select class="form-select" id="Quan" name="Quan">
+                                        <option value="Tân Phú" selected>Tân Phú</option>
+                                        <!-- Thêm các quận khác -->
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="mb-3">
+                                    <label for="ThanhPho" class="form-label">Thành phố</label>
+                                    <select class="form-select" id="ThanhPho" name="ThanhPho">
+                                        <option value="Hồ Chí Minh" selected>Hồ Chí Minh</option>
+                                        <!-- Thêm các thành phố khác -->
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="fUpLoad" class="form-label">Ảnh đại diện</label>
+                            <input type="file" class="form-control" id="fUpLoad" name="fUpLoad"
+                                   accept="image/*">
+                            <small class="text-muted">Chấp nhận file JPG, PNG, GIF (tối đa 5MB)</small>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-user-check"></i> Đăng ký
+                            </button>
+                        </div>
+                    </form>
+
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <div class="alert alert-danger mt-3" role="alert">
+                            <i class="fas fa-exclamation-triangle"></i> @errorMessage
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+﻿﻿<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.12/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+    // Custom validation methods
+    $.validator.addMethod("passwordStrength", function(value, element) {
+        return this.optional(element) ||
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/.test(value);
+    }, "Mật khẩu phải có ít nhất 6 ký tự, bao gồm chữ hoa, chữ thường và số");
+
+    $.validator.addMethod("phoneVN", function(value, element) {
+        return this.optional(element) ||
+            /^(0[3|5|7|8|9])+([0-9]{8})$/.test(value);
+    }, "Số điện thoại không hợp lệ");
+
+    $.validator.addMethod("noSpace", function(value, element) {
+        return this.optional(element) ||
+            /^\S*$/.test(value);
+    }, "Không được chứa khoảng trắng");
+
+    // Custom adapter for password strength
+    $.validator.unobtrusive.adapters.add("passwordstrength", function(options) {
+        options.rules["passwordStrength"] = true;
+        options.messages["passwordStrength"] = options.message;
+    });
+
+    // Custom adapter for Vietnamese phone numbers
+    $.validator.unobtrusive.adapters.add("phonevn", function(options) {
+        options.rules["phoneVN"] = true;
+        options.messages["phoneVN"] = options.message;
+    });
+
+    // Custom adapter for no space validation
+    $.validator.unobtrusive.adapters.add("nospace", function(options) {
+        options.rules["noSpace"] = true;
+        options.messages["noSpace"] = options.message;
+    });
+
+    // Set default options
+    $.validator.setDefaults({
+        errorClass: "is-invalid",
+        validClass: "is-valid",
+        errorElement: "div",
+        errorPlacement: function(error, element) {
+            error.addClass("invalid-feedback");
+            element.closest(".form-group").append(error);
+        },
+        highlight: function(element, errorClass, validClass) {
+            $(element).addClass(errorClass).removeClass(validClass);
+        },
+        unhighlight: function(element, errorClass, validClass) {
+            $(element).removeClass(errorClass).addClass(validClass);
+        }
+    });
+
+    // Custom messages for Vietnamese
+    $.extend($.validator.messages, {
+        required: "Trường này là bắt buộc",
+        email: "Vui lòng nhập địa chỉ email hợp lệ",
+        url: "Vui lòng nhập URL hợp lệ",
+        date: "Vui lòng nhập ngày hợp lệ",
+        number: "Vui lòng nhập số hợp lệ",
+        digits: "Vui lòng chỉ nhập chữ số",
+        equalTo: "Vui lòng nhập lại đúng giá trị",
+        maxlength: $.validator.format("Vui lòng nhập tối đa {0} ký tự"),
+        minlength: $.validator.format("Vui lòng nhập ít nhất {0} ký tự"),
+        rangelength: $.validator.format("Vui lòng nhập từ {0} đến {1} ký tự"),
+        range: $.validator.format("Vui lòng nhập giá trị từ {0} đến {1}"),
+        max: $.validator.format("Vui lòng nhập giá trị nhỏ hơn hoặc bằng {0}"),
+        min: $.validator.format("Vui lòng nhập giá trị lớn hơn hoặc bằng {0}")
+    });
+</script>

@@ -1,0 +1,487 @@
+﻿﻿@using Web_QLNT.Models;
+@using System.Globalization;
+@using System.Web;
+@{
+    string propic = null;
+    string prodob = null;
+    KhachHang kh = new KhachHang();
+    if (Session["KhachHang"] != null)
+    {
+        kh = Session["KhachHang"] as Web_QLNT.Models.KhachHang;
+        prodob = kh.NgaySinh.HasValue
+    ? kh.NgaySinh.Value.ToString("yyyy-MM-dd")
+    : string.Empty;
+        if (kh.HinhAnh != null)
+        {
+            propic = kh.HinhAnh;
+        }
+        else
+        {
+            propic = "logo.jpg";
+        }
+    }
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - BAYA Furniture</title>
+
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="~/css/site.css" rel="stylesheet" asp-append-version="true">
+
+    <style>
+        :root {
+            --primary-color: #990000;
+            --secondary-color: #f8f9fa;
+            --accent-color: #ff6b6b;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #cc0000 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo-img {
+            width: 120px;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+            .logo-img:hover {
+                transform: scale(1.05);
+            }
+
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-form {
+            position: relative;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--primary-color);
+        }
+
+        /* Navigation Styles */
+        .main-navbar {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-link-custom {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+            padding: 0.8rem 1.2rem !important;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+            margin: 0 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+            .nav-link-custom:hover {
+                background-color: var(--primary-color);
+                color: white !important;
+                transform: translateY(-2px);
+            }
+
+        /* User Actions */
+        .user-actions-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .profile-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 3px solid white;
+            object-fit: cover;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+            .profile-avatar:hover {
+                border-color: var(--accent-color);
+                transform: scale(1.1);
+            }
+
+        .cart-icon {
+            position: relative;
+            font-size: 1.5rem;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+            .cart-icon:hover {
+                color: var(--accent-color);
+            }
+
+        .cart-badge {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Footer Styles */
+        .main-footer {
+            background: linear-gradient(135deg, #495057 0%, #343a40 100%);
+            color: white;
+            margin-top: auto;
+        }
+
+        .footer-section h5 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+            .footer-links li {
+                margin-bottom: 0.5rem;
+            }
+
+            .footer-links a {
+                color: #dee2e6;
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+
+                .footer-links a:hover {
+                    color: var(--accent-color);
+                    padding-left: 5px;
+                }
+
+        /* Modal Improvements */
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #cc0000 100%);
+            color: white;
+        }
+
+        .btn-primary-custom {
+            background: linear-gradient(135deg, var(--primary-color) 0%, #cc0000 100%);
+            border: none;
+            padding: 0.5rem 2rem;
+            transition: all 0.3s ease;
+        }
+
+            .btn-primary-custom:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(153, 0, 0, 0.3);
+            }
+
+        /* Responsive Design */
+        @@media (max-width: 768px) {
+            .search-container {
+                margin: 1rem 0;
+            }
+
+            .nav-link-custom {
+                padding: 0.5rem !important;
+                font-size: 0.8rem;
+            }
+
+            .user-actions-container {
+                justify-content: center;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Logo -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <a href="~/Home/Index" class="d-inline-block">
+                        <img src="~/Images/logo.jpg" alt="BAYA Furniture" class="logo-img">
+                    </a>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="col-lg-5 col-md-6 d-none d-md-block">
+                    <div class="search-container">
+                        <form class="search-form">
+                            <div class="input-group">
+                                <input type="text" class="form-control rounded-pill" placeholder="Tìm kiếm sản phẩm...">
+                                <button type="submit" class="search-btn">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- User Actions -->
+                <div class="col-lg-5 col-md-3 col-6">
+                    <div class="user-actions-container">
+                        @if (Session["KhachHang"] != null)
+                        {
+                            <div class="dropdown">
+                                <img src="~/Images/@propic" alt="Avatar"
+                                     class="profile-avatar dropdown-toggle"
+                                     id="userDropdown"
+                                     data-bs-toggle="dropdown"
+                                     aria-expanded="false">
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                    <li><h6 class="dropdown-header">Xin chào, @kh.HoTen!</h6></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#changeInfoModal">
+                                            <i class="fas fa-user-edit me-2"></i>Thay đổi thông tin
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#changePasswordModal">
+                                            <i class="fas fa-key me-2"></i>Đổi mật khẩu
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item text-danger" href="#" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                                            <i class="fas fa-trash me-2"></i>Xóa tài khoản
+                                        </a>
+                                    </li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li>
+                                        <a class="dropdown-item" href="@Url.Action("Logout", "Home")">
+                                            <i class="fas fa-sign-out-alt me-2"></i>Đăng xuất
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <a href="~/Home/ViewCart" class="cart-icon position-relative">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-badge">0</span>
+                            </a>
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                                <i class="fas fa-sign-in-alt me-1"></i>Đăng nhập
+                            </button>
+                            <a href="~/Home/Register" class="btn btn-light">
+                                <i class="fas fa-user-plus me-1"></i>Đăng ký
+                            </a>
+                            <a href="~/Home/ViewCart" class="cart-icon position-relative">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-badge">0</span>
+                            </a>
+                        }
+                    </div>
+                </div>
+
+                <!-- Mobile Search Button -->
+                <div class="col-12 d-md-none mt-2">
+                    <button class="btn btn-outline-light w-100" type="button" data-bs-toggle="collapse" data-bs-target="#mobileSearch">
+                        <i class="fas fa-search me-1"></i>Tìm kiếm
+                    </button>
+                    <div class="collapse mt-2" id="mobileSearch">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                            <button class="btn btn-light" type="button">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light main-navbar">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    @{
+                        var categories = new[]
+                        {
+                                        new { Id = 1, Name = "Sofa" },
+                                        new { Id = 2, Name = "Ghế thư giãn" },
+                                        new { Id = 3, Name = "Bàn" },
+                                        new { Id = 4, Name = "Ghế" },
+                                        new { Id = 5, Name = "Giường nệm" },
+                                        new { Id = 6, Name = "Chăn ga gối" },
+                                        new { Id = 7, Name = "Tủ kệ" },
+                                        new { Id = 8, Name = "Nội thất văn phòng" },
+                                        new { Id = 9, Name = "Trang trí nhà cửa" },
+                                        new { Id = 10, Name = "Nhà bếp" },
+                                        new { Id = 11, Name = "Phòng tắm" }
+                                        };
+                    }
+
+                    @foreach (var category in categories)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-custom" href="~/Home/GetSP/@category.Id">
+                                @category.Name
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container py-4">
+            @RenderBody()
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>CÔNG TY CỔ PHẦN NỘI THẤT BAYA</h5>
+                        <p class="small">Thương hiệu nội thất và trang trí hàng đầu Việt Nam, góp phần xây dựng thêm nhiều tổ ấm mỗi ngày.</p>
+                        <p class="small mb-1">
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Tầng 08, Tòa nhà Pearl Plaza, Số 561A Điện Biên Phủ, Phường 25, Quận Bình Thạnh, TP.HCM
+                        </p>
+                        <p class="small mb-1">
+                            <i class="fas fa-phone me-2"></i>
+                            1900 63 64 76
+                        </p>
+                        <p class="small mb-0">
+                            <i class="fas fa-envelope me-2"></i>
+                            webshop@baya.vn
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Về BAYA</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Giới thiệu</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Liên hệ</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Blog</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Hệ thống cửa hàng</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Hỗ trợ khách hàng</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Câu hỏi thường gặp</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Hướng dẫn đặt hàng</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Mua hàng trả góp</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="footer-section">
+                        <h5>Hỗ trợ kỹ thuật</h5>
+                        <ul class="footer-links">
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Chính sách bảo hành</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Chi phí vận chuyển</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Chính sách đổi trả</a></li>
+                            <li><a href="#"><i class="fas fa-chevron-right me-1"></i>Hình thức thanh toán</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <hr class="bg-light">
+                    <p class="small mb-0">&copy; 2024 BAYA Furniture. Tất cả các quyền được bảo lưu.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals (giữ nguyên từ phiên bản trước nhưng đã được cải thiện trong CSS) -->
+    @Html.Partial("_Modals")
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        // Initialize tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Auto-hide alerts
+        setTimeout(function() {
+            var alerts = document.querySelectorAll('.alert');
+            alerts.forEach(function(alert) {
+                new bootstrap.Alert(alert).close();
+            });
+        }, 5000);
+    </script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

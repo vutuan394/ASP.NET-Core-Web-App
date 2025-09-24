@@ -1,0 +1,63 @@
+﻿﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = "Lỗi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow">
+                <div class="card-header bg-danger text-white text-center">
+                    <h1 class="card-title mb-0"><i class="fas fa-exclamation-triangle"></i> Lỗi</h1>
+                </div>
+                <div class="card-body text-center">
+                    <h2 class="text-danger">Đã xảy ra lỗi trong quá trình xử lý yêu cầu của bạn.</h2>
+                    
+                    @if (Model.ShowRequestId)
+                    {
+                        <div class="alert alert-info mt-3">
+                            <strong>Mã yêu cầu:</strong> <code>@Model.RequestId</code>
+                        </div>
+                    }
+
+                    <div class="mt-4">
+                        <a href="~/Home/Index" class="btn btn-primary me-2">
+                            <i class="fas fa-home"></i> Về trang chủ
+                        </a>
+                        <a href="javascript:history.back()" class="btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Quay lại
+                        </a>
+                    </div>
+
+                    @if (Model.ShowRequestId)
+                    {
+                        <div class="mt-4">
+                            <small class="text-muted">
+                                Nếu lỗi tiếp tục xảy ra, vui lòng cung cấp mã yêu cầu trên khi liên hệ hỗ trợ.
+                            </small>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .card {
+            border: none;
+            border-radius: 10px;
+        }
+        
+        .card-header {
+            border-radius: 10px 10px 0 0 !important;
+            padding: 1.5rem;
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+    </style>
+}

@@ -1,0 +1,10 @@
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.csproj.AssemblyReference.cache
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.GeneratedMSBuildEditorConfig.editorconfig
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.AssemblyInfoInputs.cache
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.AssemblyInfo.cs
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.csproj.CoreCompileInputs.cache
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.MvcApplicationPartsAssemblyInfo.cache
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.RazorAssemblyInfo.cache
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.RazorAssemblyInfo.cs
+C:\.NET-HL\Lession1\QL_QLNT\QL_QLNT\obj\Debug\net8.0\QL_QLNT.sourcelink.json

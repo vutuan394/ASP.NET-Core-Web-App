@@ -1,0 +1,174 @@
+﻿@model SanPham
+@{
+    ViewData["Title"] = Model.TenSP;
+    var dsncc = ViewBag.NCC as List<NhaCungCap> ?? new List<NhaCungCap>();
+    var dsl = ViewBag.Loai as List<Loai> ?? new List<Loai>();
+    var tt = Model.TinhTrang == true ? "Còn Hàng" : "Hết Hàng";
+    var dsgc = Model.GhiChu?.Split(';') ?? new string[0];
+    var dsct = Model.ChuongTrinhApDung?.Split(';') ?? new string[0];
+    var nhaCungCap = dsncc.FirstOrDefault(t => t.MaNCC == Model.MaNCC);
+    var loai = dsl.FirstOrDefault(t => t.MaLoai == Model.MaLoai);
+}
+
+<style>
+    .product-image {
+        max-width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    .quantity-control {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .quantity-input {
+        width: 80px;
+        text-align: center;
+    }
+
+    .product-info-card {
+        border-left: 3px solid #007bff;
+        padding-left: 15px;
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="~/images/products/@Model.HinhAnh" alt="@Model.TenSP" class="product-image"
+                 onerror="this.src='/images/products/default.jpg'">
+        </div>
+
+        <div class="col-md-6">
+            <div class="product-info-card">
+                <h2 class="text-primary">@Model.TenSP</h2>
+                <p class="text-muted">
+                    Mã SP: <strong>@Model.MaSP</strong> | Tình trạng:
+                    <span class="badge bg-@(tt == "Còn Hàng" ? "success" : "secondary")">@tt</span> |
+                    Thương hiệu: <strong>@nhaCungCap?.TenNCC</strong>
+                </p>
+
+                <div class="bg-light p-3 rounded mb-3">
+                    <h3 class="text-danger mb-0">@Model.DonGia.ToString("N0") ₫</h3>
+                </div>
+
+                <form method="post" action="@Url.Action("AddToCart", "Home")" class="mb-4">
+                    <input type="hidden" name="id" value="@Model.MaSP" />
+
+                    <div class="quantity-control mb-3">
+                        <label class="form-label me-3">Số lượng:</label>
+                        <button type="button" class="btn btn-outline-secondary" onclick="decreaseQuantity()">-</button>
+                        <input type="number" name="quantity" id="quantity" value="1" min="1"
+                               max="@Model.SoLuongTon" class="form-control quantity-input" />
+                        <button type="button" class="btn btn-outline-secondary" onclick="increaseQuantity()">+</button>
+                    </div>
+
+                    @if (tt == "Còn Hàng")
+                    {
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-cart-plus"></i> Thêm vào giỏ hàng
+                        </button>
+                    }
+                    else
+                    {
+                        <button class="btn btn-secondary btn-lg" disabled>
+                            <i class="fas fa-times"></i> Hết hàng
+                        </button>
+                    }
+                </form>
+
+                @if (dsct.Any())
+                {
+                    <div class="mb-3">
+                        <h5>Chương trình áp dụng:</h5>
+                        @foreach (var item in dsct)
+                        {
+                            <span class="badge bg-info me-1">@item</span>
+                        }
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Thông tin chi tiết</h4>
+                </div>
+                <div class="card-body">
+                    <table class="table table-striped">
+                        <tr>
+                            <td width="200"><strong>Mô tả sản phẩm</strong></td>
+                            <td>@Model.MoTa</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Loại sản phẩm</strong></td>
+                            <td>@loai?.TenLoai</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Thương hiệu</strong></td>
+                            <td>@nhaCungCap?.TenNCC</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Kích thước</strong></td>
+                            <td>@Model.KichThuoc</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Màu sắc</strong></td>
+                            <td>@Model.MauSac</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chất liệu</strong></td>
+                            <td>@Model.ChatLieu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Xuất xứ</strong></td>
+                            <td>@Model.XuatXu</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Đơn vị</strong></td>
+                            <td>@Model.DonVi</td>
+                        </tr>
+                    </table>
+
+                    @if (dsgc.Any())
+                    {
+                        <h5>Ghi chú sản phẩm:</h5>
+                        <ul>
+                            @foreach (var item in dsgc)
+                            {
+                                <li>@item</li>
+                            }
+                        </ul>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function increaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            var max = parseInt(quantityInput.max);
+            var current = parseInt(quantityInput.value);
+            if (current < max) {
+                quantityInput.value = current + 1;
+            }
+        }
+
+        function decreaseQuantity() {
+            var quantityInput = document.getElementById('quantity');
+            var current = parseInt(quantityInput.value);
+            if (current > 1) {
+                quantityInput.value = current - 1;
+            }
+        }
+    </script>
+}
