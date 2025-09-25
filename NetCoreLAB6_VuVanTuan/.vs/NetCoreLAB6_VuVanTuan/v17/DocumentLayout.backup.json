@@ -1,0 +1,204 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|c:\\.net-hl\\netcorelab6_vuvantuan\\netcorelab6_vuvantuan\\obj\\netcorelab6_vuvantuan.csproj.nuget.dgspec.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|solutionrelative:netcorelab6_vuvantuan\\obj\\netcorelab6_vuvantuan.csproj.nuget.dgspec.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.props||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj.user||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|c:\\.net-hl\\netcorelab6_vuvantuan\\netcorelab6_vuvantuan\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|solutionrelative:netcorelab6_vuvantuan\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|c:\\.net-hl\\netcorelab6_vuvantuan\\netcorelab6_vuvantuan\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|solutionrelative:netcorelab6_vuvantuan\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|c:\\.net-hl\\netcorelab6_vuvantuan\\netcorelab6_vuvantuan\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|solutionrelative:netcorelab6_vuvantuan\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|c:\\.net-hl\\netcorelab6_vuvantuan\\netcorelab6_vuvantuan\\entities\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|solutionrelative:netcorelab6_vuvantuan\\entities\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|c:\\.net-hl\\netcorelab6_vuvantuan\\netcorelab6_vuvantuan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|solutionrelative:netcorelab6_vuvantuan\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Migrations\\20250925151633_v1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:NetCoreLAB6_VuVanTuan\\Migrations\\20250925151633_v1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 276,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "NetCoreLAB6_VuVanTuan.csproj.nuget.dgspec.json",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.dgspec.json",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.dgspec.json",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.dgspec.json",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.dgspec.json",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-25T15:34:05.403Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "NetCoreLAB6_VuVanTuan.csproj.nuget.g.targets",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.targets",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.targets",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.targets [Read Only]",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.targets [Read Only]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-09-25T15:33:28.796Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "NetCoreLAB6_VuVanTuan.csproj.user",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj.user",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj.user",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj.user",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj.user",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003464|",
+              "WhenOpened": "2025-09-25T15:33:23.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "NetCoreLAB6_VuVanTuan.csproj.nuget.g.props",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.props",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.props",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.props [Read Only]",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\obj\\NetCoreLAB6_VuVanTuan.csproj.nuget.g.props [Read Only]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-09-25T15:33:16.622Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\appsettings.json",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\appsettings.json",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\appsettings.json",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\appsettings.json",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-25T15:20:28.012Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Program.cs",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\Program.cs",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Program.cs",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:20:24.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20250925151633_v1.cs",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Migrations\\20250925151633_v1.cs",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\Migrations\\20250925151633_v1.cs",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Migrations\\20250925151633_v1.cs",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\Migrations\\20250925151633_v1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:16:34.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\Models\\Category.cs",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Models\\Category.cs",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\Models\\Category.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwBkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:15:28.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\Models\\Product.cs",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Models\\Product.cs",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\Models\\Product.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAtwCUAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:15:01.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Entities\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\Entities\\AppDbContext.cs",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Entities\\AppDbContext.cs",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\Entities\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAYwAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:14:17.618Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 124,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

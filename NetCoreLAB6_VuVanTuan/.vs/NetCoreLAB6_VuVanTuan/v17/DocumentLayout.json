@@ -1,0 +1,51 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|c:\\.net-hl\\netcorelab6_vuvantuan\\netcorelab6_vuvantuan\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}|NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan.csproj|solutionrelative:netcorelab6_vuvantuan\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 276,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "NetCoreLAB6_VuVanTuan\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\.NET-HL\\NetCoreLAB6_VuVanTuan\\NetCoreLAB6_VuVanTuan\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "NetCoreLAB6_VuVanTuan\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAcwJ4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T15:43:15.616Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 124,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

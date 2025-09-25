@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36511.14 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCoreLAB6_VuVanTuan", "NetCoreLAB6_VuVanTuan\NetCoreLAB6_VuVanTuan.csproj", "{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{178AC420-37B7-43E8-A70C-EFFC1EC89A3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {02E10645-7F2E-49A0-AEE1-0A60A953ED12}
+	EndGlobalSection
+EndGlobal
